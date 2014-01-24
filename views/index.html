@@ -1,34 +1,45 @@
 <head>
-<title>Todo List</title>
-<style>
-    ul{list-style-type:none;}
-.done{
-        text-decoration:line-through;}
+    <title>Todo List</title>
+    <style>
+        ul{list-style-type:none;}
+    .done{
+            text-decoration:line-through;}
     </style>
 </head>
 
 <body>
-<form method='post' action='todos'>
-    item:<input type='text' name='item'>
-    <input type='submit' value='add item'>
-    
-</form>
+    <form method='post' action='todos'>
+        item:
+        <input type='text' name='item'>
+        <input type='submit' value='add item'>
+
+    </form>
     <ul>
     </ul>
-    
+
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
+        var 
+        var clicked = function(){
+            if ($(this).parent().hasClass("done"))
+                $(this).parent().removeClass("done");
+                else
+            $(this).parent().addClass("done")
+                    }
         
-    $(function(){
-        $(":checkbox").on("checked",()
-        $.getJSON("/todos", function(data){ 
-            for ( var i=0; i<data.length; i++){
-                var item =data[i];
-                var new_li_element= $("<li><input type='checkbox'/>"+item.name+"</li>");
-                $("ul").append(new_li_element);
-            console.log(data);}
-        })  
-    });    
+        $(function(){
+            //$(":checkbox").on("checked",.addClass("done"));
+            $.getJSON("/todos", function(data){ 
+                for ( var i=0; i<data.length; i++){
+                    var item =data[i];
+                    
+                    var new_li_element= $("<li><input type='checkbox'/>"+item.name+"</li>");
+                    $("ul").append(new_li_element);
+                console.log(data);}
+             $(":checkbox").on("click",clicked());
+                
+                                                  
+        })})
     </script>
-    
+
 </body>
