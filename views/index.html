@@ -19,26 +19,25 @@
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
-        var 
+        
         var clicked = function(){
-            if ($(this).parent().hasClass("done"))
-                $(this).parent().removeClass("done");
-                else
-            $(this).parent().addClass("done")
-                    }
+            var thisParent = $(this).parent();
+            if (thisParent.hasClass("done"))
+                thisParent.removeClass("done");
+            else
+                thisParent.addClass("done");
+            }
+        
+        $(":checkbox").on("click",clicked);
         
         $(function(){
-            //$(":checkbox").on("checked",.addClass("done"));
             $.getJSON("/todos", function(data){ 
                 for ( var i=0; i<data.length; i++){
                     var item =data[i];
                     
                     var new_li_element= $("<li><input type='checkbox'/>"+item.name+"</li>");
                     $("ul").append(new_li_element);
-                console.log(data);}
-             $(":checkbox").on("click",clicked());
-                
-                                                  
+                console.log(data);}                                           
         })})
     </script>
 

@@ -37,5 +37,5 @@ exports.change=function(req,res){
     var found= find(req.params.id, entries);
     found.isDone=true;
     jf.writeFileSync(file, entries);
-
+    
 };
