@@ -10,7 +10,7 @@
 <body>
     <form method='post' action='todos'>
         item:
-        <input type='text' name='item'>
+        <input type='text' name='name'>
         <input type='submit' value='add item'>
 
     </form>
@@ -23,21 +23,37 @@
         var clicked = function(){
             var thisParent = $(this).parent();
             if (thisParent.hasClass("done"))
-                thisParent.removeClass("done");
-            else
-                thisParent.addClass("done");
+                markitemundone(thisParent);
+            else 
+                markitemdone(thisParent);
             }
+        var markitemdone = function(thisItem){
+            thisItem.addClass("done");
+            $.post("todos/"+ thisItem.data("uuid"), {
+                "isDone":true})
+        }
         
-        $(":checkbox").on("click",clicked);
+        var markitemundone = function(thisItem){
+            thisItem.removeClass("done");
+            $.post("todos/"+ thisItem.data("uuid"), {
+                "isDone":false})
+        }
+        
         
         $(function(){
             $.getJSON("/todos", function(data){ 
                 for ( var i=0; i<data.length; i++){
                     var item =data[i];
-                    
                     var new_li_element= $("<li><input type='checkbox'/>"+item.name+"</li>");
+                    new_li_element.data("uuid", item.id);
                     $("ul").append(new_li_element);
-                console.log(data);}                                           
+                    if (item.isDone=="true"){
+                        new_li_element.find("input:checkbox").attr("checked",true);
+                        new_li_element.addClass("done");}
+                } 
+                $(":checkbox").on("click",clicked);
+                
+        
         })})
     </script>
 

@@ -19,7 +19,7 @@ exports.todos=function(req,res){
 
 exports.submit=function(req,res){
     var new_todo= {
-    "name":req.body.item,
+    "name":req.body.name,
     "isDone":false,
     "id":uuid.v4()
     };
@@ -35,7 +35,10 @@ exports.select=function(req,res){
 
 exports.change=function(req,res){
     var found= find(req.params.id, entries);
-    found.isDone=true;
+    if (req.body.isDone == "false" || req.body.isDone == "true")
+        found.isDone=req.body.isDone;
+    found.name=req.body.name || found.name;
     jf.writeFileSync(file, entries);
+    res.send(found);
     
 };
