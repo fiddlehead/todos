@@ -2,11 +2,11 @@
   {
     "name": "Push Macho Man",
     "id": "d88a9907-c24c-4cf5-a9ce-42e6b0fbe9cc",
-    "isDone": "false"
+    "isDone": "true"
   },
   {
     "name": "show off",
-    "isDone": "true",
+    "isDone": "false",
     "id": "adc8b61d-36dc-4656-a4c8-23fc8766594a"
   },
   {
@@ -16,7 +16,17 @@
   },
   {
     "name": "go curling",
-    "isDone": "true",
+    "isDone": "false",
     "id": "955eed36-15bb-4a2a-a3fb-a5dfb3681b53"
+  },
+  {
+    "name": "walk dog",
+    "isDone": "false",
+    "id": "3ea4f576-1ab7-4883-ae5b-2ad2cc4556d8"
+  },
+  {
+    "name": "Ask Thomas why css link doesn't work",
+    "isDone": "false",
+    "id": "1d4ce980-cdd4-4651-a5f6-26905bf37ab2"
   }
 ]
