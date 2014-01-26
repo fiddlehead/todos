@@ -26,7 +26,17 @@
   },
   {
     "name": "Ask Thomas why css link doesn't work",
-    "isDone": "false",
+    "isDone": "true",
     "id": "1d4ce980-cdd4-4651-a5f6-26905bf37ab2"
+  },
+  {
+    "name": "Tell dexter, the browser is requesting \"http://localhost:4242/css/style.css\", but the server does not know how to handle that route",
+    "isDone": false,
+    "id": "24f0342a-332e-4d41-a846-7c8d0628f54e"
+  },
+  {
+    "name": "either add static file serving middleware, or setup a specific route for serving the css file",
+    "isDone": false,
+    "id": "3117a739-7e8f-496c-9946-23eb56f51c4a"
   }
 ]
