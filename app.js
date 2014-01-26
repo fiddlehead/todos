@@ -5,6 +5,7 @@ var app = express();
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(app.router);
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', routes.index);
 app.get('/todos', routes.todos);

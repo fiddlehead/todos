@@ -36,7 +36,12 @@
   },
   {
     "name": "either add static file serving middleware, or setup a specific route for serving the css file",
-    "isDone": false,
+    "isDone": "true",
     "id": "3117a739-7e8f-496c-9946-23eb56f51c4a"
+  },
+  {
+    "name": "show everyone how cool this looks now",
+    "isDone": false,
+    "id": "45de9a37-ea46-4a30-9b94-bd9f766c1b7c"
   }
 ]
