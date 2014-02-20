@@ -10,7 +10,11 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', routes.index);
 app.get('/todos', routes.todos);
 app.post('/todos', routes.submit);
+// match in order has to come before :id 
+app.get('/todos/removecompleted', routes.removecompleted);
+app.get('/todos/removeall', routes.removeall);
 app.get('/todos/:id', routes.select);
 app.post('/todos/:id', routes.change);
+
 
 app.listen(4242);
