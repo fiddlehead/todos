@@ -50,7 +50,6 @@ exports.change=function(req,res){
     found.name=req.body.name || found.name;
     jf.writeFileSync(file, entries);
     res.send(found);
-    
 };
 
 exports.removeall=function(req,res){
@@ -61,10 +60,6 @@ exports.removeall=function(req,res){
 }
 
 exports.removecompleted=function(req,res){
-    // read entries array for isDone=="false"
-    //create new array with only isDone=="false"
-    //for to read all, with if loop inside
-    
     entries = done(entries);
     jf.writeFileSync(file, entries);
     res.redirect("/");
